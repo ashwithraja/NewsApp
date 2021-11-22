@@ -3,13 +3,13 @@ package com.codenast.newsapp.viewholders
 import com.codenast.domain.model.Articles
 import com.codenast.newsapp.R
 import com.codenast.newsapp.base.BaseViewHolder
-import com.codenast.newsapp.databinding.ArticleItemBinding
+import com.codenast.newsapp.databinding.NewsItemBinding
 
-class ArticlesListItemViewHolder(private var viewBinder: ArticleItemBinding) :
+class NewsListItemViewHolder(private var viewBinder: NewsItemBinding) :
     BaseViewHolder<Articles>(viewBinder) {
     companion object {
         fun getLayoutId(): Int {
-            return R.layout.article_item
+            return R.layout.news_item
         }
     }
 

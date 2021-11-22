@@ -10,7 +10,10 @@ object NetworkUtills {
     }
 
     fun getCommentUrl(url: String?): String? {
-        return Constants.COMMENTS_AND_LIKE_URL.plus(filterUrl(url))
+        return Constants.COMMENTS_URL.plus(filterUrl(url))
+    }
+    fun getLikeUrl(url: String?): String? {
+        return Constants.LIKE_URL.plus(filterUrl(url))
     }
 
     private fun filterUrl(url: String?): String? {

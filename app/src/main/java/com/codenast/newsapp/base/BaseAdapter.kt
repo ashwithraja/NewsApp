@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.codenast.domain.model.Articles
 import com.codenast.newsapp.utills.Constants
-import com.codenast.newsapp.viewholders.ArticlesListItemViewHolder
+import com.codenast.newsapp.viewholders.NewsListItemViewHolder
 
 /**
  * Generic recyclar adapter
@@ -22,20 +22,20 @@ class BaseAdapter<T> : RecyclerView.Adapter<BaseViewHolder<T>>() {
     private fun getViewHolder(viewType: Int, parent: ViewGroup): BaseViewHolder<T> {
         when (viewType) {
             Constants.ViewHolderType.ARTICLE_LIST -> {
-                return ArticlesListItemViewHolder(
+                return NewsListItemViewHolder(
                     DataBindingUtil.inflate(
                         LayoutInflater.from(parent.context),
-                        ArticlesListItemViewHolder.getLayoutId(),
+                        NewsListItemViewHolder.getLayoutId(),
                         parent,
                         false
                     )
                 ) as BaseViewHolder<T>
             }
         }
-        return ArticlesListItemViewHolder(
+        return NewsListItemViewHolder(
             DataBindingUtil.inflate(
                 LayoutInflater.from(parent.context),
-                ArticlesListItemViewHolder.getLayoutId(),
+                NewsListItemViewHolder.getLayoutId(),
                 parent,
                 false
             )

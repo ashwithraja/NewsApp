@@ -58,7 +58,7 @@ class NewsListViewModel @Inject constructor(
                 is RemoteData.Failure -> {
                 }
                 is RemoteData.Success -> {
-                    articles?.like = comment.data?.count
+                    articles?.like = like.data?.count
                 }
             }
             withContext(

@@ -3,7 +3,7 @@ package com.codenast.data.repository
 import HeadLineConvertor
 import com.codenast.data.model.CommentEntityConvertor
 import com.codenast.data.model.LikeEntityConvertor
-import com.codenast.data.remote.service.ApiExecutor
+import com.codenast.data.remote.service.ApiResponseConvertor
 import com.codenast.data.remote.service.RetrofitApiService
 import com.codenast.data.utills.NetworkUtills
 import com.codenast.domain.model.Comment
@@ -20,7 +20,7 @@ class NewsRepositoryImp @Inject constructor() : NewsRepository {
         try {
             //Connectivity check should be added here and data can be fetched from local or DB
             val response =
-                ApiExecutor.safeApiCall(apiService.getHeadlines(NetworkUtills.getCommonQueryParams()))
+                ApiResponseConvertor.safeApiCall(apiService.getHeadlines(NetworkUtills.getCommonQueryParams()))
 
             return when (response) {
                 is RemoteData.Failure -> RemoteData.Failure(response.data.toString())
@@ -39,7 +39,7 @@ class NewsRepositoryImp @Inject constructor() : NewsRepository {
 
     override suspend fun fetchLike(url: String?): RemoteData<out Like> {
         val response =
-            ApiExecutor.safeApiCall(apiService.getLikes(NetworkUtills.getCommentUrl(url)))
+            ApiResponseConvertor.safeApiCall(apiService.getLikes(NetworkUtills.getLikeUrl(url)))
 
         return when (response) {
             is RemoteData.Failure -> RemoteData.Failure(response.data.toString())
@@ -53,7 +53,7 @@ class NewsRepositoryImp @Inject constructor() : NewsRepository {
 
     override suspend fun fetchComment(url: String?): RemoteData<out Comment> {
         val response =
-            ApiExecutor.safeApiCall(apiService.getComments(NetworkUtills.getCommentUrl(url)))
+            ApiResponseConvertor.safeApiCall(apiService.getComments(NetworkUtills.getCommentUrl(url)))
 
         return when (response) {
             is RemoteData.Failure -> RemoteData.Failure(response.data.toString())

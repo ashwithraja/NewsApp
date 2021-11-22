@@ -16,7 +16,6 @@ class NewsRepositoryImpTest : TestCase() {
 
 
    suspend fun testFetchNewsHeadLines() {
-
         apiService.getHeadlines(NetworkUtills.getCommonQueryParams())
     }
 

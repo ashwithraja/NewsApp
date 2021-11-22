@@ -3,7 +3,7 @@ package com.codenast.data.remote.service
 import com.codenast.domain.model.RemoteData
 import retrofit2.Response
 
-object ApiExecutor {
+object ApiResponseConvertor {
 
  fun <T> safeApiCall(response: Response<T>): RemoteData<T> {
         try {

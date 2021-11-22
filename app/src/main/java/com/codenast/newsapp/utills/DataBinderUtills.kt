@@ -13,7 +13,7 @@ class DataBinderUtills {
         fun setImage(view: ImageView, url: String?) {
             if (view != null && !TextUtils.isEmpty(url)) {
                 Glide.with(view.context).load(url)
-                    .placeholder(view.resources.getDrawable(R.drawable.ic_launcher_background))
+                    .placeholder(view.resources.getDrawable(R.drawable.placeholder))
                     .into(view)
             }
         }
