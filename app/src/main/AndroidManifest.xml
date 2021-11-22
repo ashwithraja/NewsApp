@@ -15,7 +15,7 @@
         android:theme="@style/Theme.NewsApp">
         <activity
             android:name="com.codenast.newsapp.NavigationControllerActivity"
-            android:label="@string/action_settings"
+            android:label="@string/app_name"
             android:theme="@style/Theme.NewsApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
