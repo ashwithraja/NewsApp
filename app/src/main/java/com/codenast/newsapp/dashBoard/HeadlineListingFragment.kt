@@ -61,10 +61,7 @@ class HeadlineListingFragment : BaseFragment(), BaseAdapter.ItemClickListner {
     }
 
     override fun onItemClick(data: Any?, position: Int) {
-        /* var action = SearchProfileFragmentDirections.actionNavSearchToNavProfileDetails(data)
-         NavHostFragment.findNavController(this).navigate(action)*/
         var action = HeadlineListingFragmentDirections.actionListingToDetails(data as Articles)
         NavHostFragment.findNavController(this).navigate(action)
-
     }
 }
