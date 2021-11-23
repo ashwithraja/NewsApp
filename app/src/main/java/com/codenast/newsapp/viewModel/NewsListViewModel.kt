@@ -30,7 +30,7 @@ class NewsListViewModel @Inject constructor(
             val value = fetchNewsHeadlineUseCase.fetchHeadlines()
             withContext(Dispatchers.Main) {
                 when (value) {
-                    is RemoteData.Failure -> mErrorObserver.value = "messsgae";
+                    is RemoteData.Failure -> mErrorObserver.value = value.error;
                     is RemoteData.Success -> _newsListLiveData.value = value.data
                 }
             }
